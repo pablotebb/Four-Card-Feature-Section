@@ -1,6 +1,24 @@
 @use "variables";
 
+@mixin header-measures(
+  $font-size: unset,
+  $font-weight: unset,
+  $color: unset,
+  $text-align: unset
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+  text-align: $text-align;
+}
+
 @mixin line($Color) {
   background-color: $Color;
-  height: 2px;
+  height: 4px;
+}
+
+@mixin card-measures($font-size, $color, $padding-left) {
+  font-size: $font-size;
+  color: $color;
+  padding-left: $padding-left;
 }
