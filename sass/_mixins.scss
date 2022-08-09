@@ -1,0 +1,6 @@
+@use "variables";
+
+@mixin line($Color) {
+  background-color: $Color;
+  height: 2px;
+}

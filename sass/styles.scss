@@ -1,0 +1,202 @@
+@use "initial";
+@use "variables";
+@use "mixins";
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40xp;
+  align-items: center;
+  margin-top: 95px;
+  margin-bottom: 41px;
+  // border: 1px solid blue;
+  // margin: 95px auto 41px;
+  // min-height: 1351px;
+}
+
+.header-container {
+  // border: 1px solid red;
+  padding: 0;
+  margin-bottom: 78px;
+  &__title {
+    // border: 1px solid black;
+    font-size: 25px;
+    font-weight: 290;
+    color: variables.$Very-Dark-Blue;
+    text-align: center;
+  }
+  &__subtitle {
+    // border: 1px solid black;
+    font-size: 25px;
+    font-weight: 600;
+    color: variables.$Very-Dark-Blue;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  &__description {
+    padding: 0 25px;
+    font-size: 16px;
+    color: variables.$Grayish-Blue;
+    text-align: center;
+  }
+}
+
+.set-of-cards {
+  // border: 1px solid red;
+  // min-width: 308px;
+  // max-width: 360px;
+  // height: 223px;
+}
+
+.card-container {
+  position: relative;
+  border: 1px solid variables.$Very-Light-Gray;
+  box-shadow: 0 2px 30px variables.$Grayish-Blue;
+  border-radius: 8px;
+  margin: 0 33px 7px 34px;
+  // padding-left: 30px;
+  text-align: right;
+  overflow: hidden;
+  // height: 225px;
+  height: 219px;
+
+  min-width: 308px;
+  max-width: 351px;
+  margin-bottom: 25px;
+
+  .superior-card {
+    text-align: left;
+  }
+  .line-1 {
+    @include mixins.line(variables.$Cyan);
+  }
+  .line-2 {
+    @include mixins.line(variables.$Red);
+  }
+  .line-3 {
+    @include mixins.line(variables.$Orange);
+  }
+  .line-4 {
+    @include mixins.line(variables.$Blue);
+  }
+  &__title {
+    font-size: 22px;
+    color: variables.$Very-Dark-Blue;
+    padding-top: 15px;
+    padding-left: 28px;
+  }
+  &__description {
+    font-size: 13px;
+    color: variables.$Grayish-Blue;
+    padding-left: 28px;
+    padding-right: 26px;
+  }
+  &__picture {
+    position: absolute;
+    width: 56px;
+    // border: 1px solid black;
+    right: 30px;
+    bottom: 29px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-container {
+    &__description {
+      font-size: 13px;
+      // border: 1px solid red;
+      width: 521px;
+    }
+  }
+  .set-of-cards {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .card-1 {
+      // Supervisor
+      border: 3px solid black;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+    .center-desktop {
+      .card-2 {
+        // Team Builder
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+      .card-3 {
+        // Karma
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+    }
+    .card-4 {
+      // Calculator
+      position: absolute;
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      margin-top: -275px;
+    }
+    .card-container {
+      // border: 1px solid black;
+      height: 249px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .header-container {
+    &__title {
+      font-size: 32px;
+    }
+    &__subtitle {
+      font-size: 32px;
+    }
+  }
+  .set-of-cards {
+    position: initial;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .card-1 {
+      // Supervisor
+      margin-right: 0;
+    }
+    .center-desktop {
+      .card-2 {
+        // Team Builder
+      }
+      .card-3 {
+        // Karma
+      }
+    }
+    .card-4 {
+      // Calculator
+      position: initial;
+      margin-left: 0;
+      margin-top: 1px;
+    }
+    .card-container {
+      border: 1px solid white;
+      position: relative;
+      &__picture {
+        position: absolute;
+        width: 56px;
+        // border: 1px solid black;
+        right: 31px;
+        bottom: 32px;
+      }
+    }
+  }
+}
+
+.footer-container {
+  margin-top: 80px;
+  .attribution {
+    font-size: variables.$Font-Size-Footer;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+}
